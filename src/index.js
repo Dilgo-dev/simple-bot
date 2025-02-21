@@ -12,7 +12,7 @@ const client = new Client({
 });
 
 client.once("ready", () => {
-  console.log(`Logged in as ${client.user.tag}`);
+  console.log(`Logged in as ${client.user.tag} but it's new`);
 });
 
 client.on("messageCreate", (message) => {
@@ -20,6 +20,10 @@ client.on("messageCreate", (message) => {
 
   if (message.content.toLowerCase() === "ping") {
     message.reply("pong");
+  }
+
+  if (message.content.toLowerCase() === "!react") {
+    message.react("👍");
   }
 });
 
